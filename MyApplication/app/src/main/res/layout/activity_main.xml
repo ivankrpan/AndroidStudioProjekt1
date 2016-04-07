@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#fefefe"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+
+
+    <TextView
+        android:text="Gundulićeva 14"
+        android:background="#D50000"
+        android:textSize="24sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="false"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        />
+    <TextView
+        android:text="3.RT"
+        android:background="#2196F3"
+        android:textSize="24sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="false"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+     />
+    <TextView
+        android:text="Tehnička škola Daruvar"
+        android:textSize="50sp"
+        android:textColor="#F44336"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        />
+
+</RelativeLayout>
