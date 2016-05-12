@@ -1,17 +1,18 @@
 package com.example.android.java;
-
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import java.text.NumberFormat;
+import com.example.android.java.R;
 
+import java.text.NumberFormat;
 /**
- * Ova metoda se pokaže kad se naruči kava.
+ * metoda koja prikazuje naruđbu naručene kave.
  */
 public class MainActivity extends ActionBarActivity {
-    int brojKava=0;
+    int kolicina = 5;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,45 +21,70 @@ public class MainActivity extends ActionBarActivity {
     }
 
     /**
-     * Ova metoda se poziva kada se pritisne dugme.
-
+     * metoda se poziva pritiskom na dugme.
      */
-    public void submitOrder(View view) {
+    public void submitOrders(View view) {
 
-        display(brojKava);
-        displayPrice(brojKava * 7);
-
-        /**
-         * metoda za zbrajanje
-         */
-    }
-    public void increment(View view) {
-        brojKava = brojKava +1;
-        display(brojKava);
+        int cijena1 = racunanjeCijene();
+        String porukaCijene = "Cijena: " + cijena1 + "kn";
+        displayMessage(porukaCijene);
 
     }
-
 
     /**
-     * metoda za oduzimanje
-     */
-    public void decrement(View view) {
-        brojKava = brojKava -1;
-        display(brojKava);
-    }
-    /**
-     * Ova metoda pokaže količinu na ekranu.
+     * metoda koja prikazuje količinu na ekranu.
      */
     private void display(int number) {
-        TextView quantityTextView = (TextView) findViewById(
-                R.id.quantity_text_view);
+        TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
         quantityTextView.setText("" + number);
+
     }
+
+
+
     /**
-     * Ova metoda prikazuje danu cijenu na ekranu.
+     * Računanje cijene naruđbe .
+     *
+     * @param kolicina je broj naručenih kava
      */
+
+
+
+    private int racunanjeCijene() {
+        int cijena1 = kolicina * 6;
+        return cijena1;
+
+    }
+
+    /**
+     * metoda koja prikazuje cijenu na ekranu.
+     */
+
+
     private void displayPrice(int number) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
     }
+
+    private void displayMessage(String message) {
+        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        priceTextView.setText(message);
+    }
+
+    /**
+     * metoda za dugme plus.
+     */
+    public void increment(View view) {
+        kolicina = kolicina + 1;
+        display(kolicina);
+    }
+
+    /**
+     * metoda za dugme minus.
+     */
+    public void decrement(View view) {
+        kolicina = kolicina - 1;
+        display(kolicina);
+    }
+
 }
